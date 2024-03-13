@@ -1,0 +1,37 @@
+# Makefile for building and pushing Docker images
+
+# Variables
+IMAGE_NAME := your-image-name
+TAG := latest
+DOCKER_USERNAME := your-docker-hub-username
+REPO_NAME := your-repository-name
+
+# Default action
+all: build tag push
+
+# Build Docker image
+build:
+	docker build -t $(IMAGE_NAME):$(TAG) .
+
+# Tag Docker image for upload
+tag:
+	docker tag $(IMAGE_NAME):$(TAG) $(DOCKER_USERNAME)/$(REPO_NAME):$(TAG)
+
+# Push Docker image to Docker Hub
+push:
+	docker push $(DOCKER_USERNAME)/$(REPO_NAME):$(TAG)
+
+# Login to Docker Hub
+login:
+	docker login
+
+# Help
+help:
+	@echo "Makefile for building and pushing Docker images"
+	@echo ""
+	@echo "Usage:"
+	@echo "  make build        - Build the Docker image"
+	@echo "  make tag          - Tag the Docker image"
+	@echo "  make push         - Push the Docker image to Docker Hub"
+	@echo "  make login        - Login to Docker Hub"
+	@echo "  make all          - Execute build, tag, and push"
