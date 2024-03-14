@@ -4,7 +4,8 @@
 # IDEA
 .idea/
 
-phisat-2/phisat2_menut_products_for_esa/
+phisat-2/menut/
+phisat-2/temp_data/
 # egg-info
 *.egg-info/
 

@@ -20,7 +20,7 @@ push:
 
 
 run:
-	docker run -it --rm -v /Users/robertodelprete/Desktop/HS2Validation/Simulator/orbitalAI/phisat-2/:/workspace/mounted/ --platform linux/amd64 $(IMAGE_NAME):$(TAG)
+	docker run -it -v /home/vessel/projects/orbitalAI/phisat-2/:/workspace/mounted/ --platform linux/amd64 $(DOCKER_USERNAME)/$(REPO_NAME):$(TAG)
 
 # Help
 help:

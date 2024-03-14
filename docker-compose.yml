@@ -1,0 +1,11 @@
+version: "2.4"
+
+services:
+  simulator:
+    image: sirbastiano94/orbitalaisimulator:latest
+    build: .
+    volumes:
+      - /home/vessel/projects/orbitalAI/phisat-2/:/workspace/mounted/
+    platform: linux/amd64
+
+    command: ["/bin/bash", "-c", "while :; do sleep 10; done"]

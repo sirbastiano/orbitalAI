@@ -1,0 +1,1 @@
+conda install -n simulator ipykernel --update-deps --force-reinstall -y
